@@ -41,7 +41,7 @@ promotionRouter
 promotionRouter
   .route("/:promotionId")
   .get((req, res, next) => {
-    Promotion.findById(req.params.campsiteId)
+    Promotion.findById(req.params.promotionId)
       .then((promotion) => {
         res.statusCode = 200;
         res.setHeader("Content-Type", "application/json");

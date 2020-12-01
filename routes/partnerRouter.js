@@ -57,7 +57,7 @@ partnerRouter
   })
   .put((req, res, next) => {
     Partner.findByIdAndUpdate(
-      req.params.campsiteId,
+      req.params.partnerId,
       {
         $set: req.body,
       },
@@ -71,7 +71,7 @@ partnerRouter
       .catch((err) => next(err));
   })
   .delete((req, res, next) => {
-    Partner.findByIdAndDelete(req.params.campsiteId)
+    Partner.findByIdAndDelete(req.params.partnerId)
       .then((response) => {
         res.statusCode = 200;
         res.setHeader("Content-Type", "application/json");
